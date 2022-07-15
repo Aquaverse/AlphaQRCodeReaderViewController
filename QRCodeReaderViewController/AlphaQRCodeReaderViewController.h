@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -25,7 +25,7 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "QRCodeReaderDelegate.h"
+#import "AlphaQRCodeReaderDelegate.h"
 #import "QRCodeReader.h"
 
 /**
@@ -33,7 +33,7 @@
  * the QRCodes. It is based on the `AVFoundation` framework from Apple. It aims
  * to replace ZXing or ZBar for iOS 7 and over.
  */
-@interface QRCodeReaderViewController : UIViewController
+@interface AlphaQRCodeReaderViewController : UIViewController
 
 #pragma mark - Creating and Inializing QRCodeReader Controllers
 /** @name Creating and Inializing QRCode Reader Controllers */
@@ -194,7 +194,7 @@
  * reader.
  * @since 1.0.0
  */
-@property (nonatomic, weak) id<QRCodeReaderDelegate> __nullable delegate;
+@property (nonatomic, weak) id<AlphaQRCodeReaderDelegate> __nullable delegate;
 
 /**
  * @abstract Sets the completion with a block that executes when a QRCode

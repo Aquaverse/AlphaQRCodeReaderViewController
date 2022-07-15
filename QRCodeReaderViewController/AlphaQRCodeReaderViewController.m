@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -24,12 +24,12 @@
  *
  */
 
-#import "QRCodeReaderViewController.h"
+#import "AlphaQRCodeReaderViewController.h"
 #import "QRCameraSwitchButton.h"
 #import "QRCodeReaderView.h"
 #import "QRToggleTorchButton.h"
 
-@interface QRCodeReaderViewController ()
+@interface AlphaQRCodeReaderViewController ()
 @property (strong, nonatomic) QRCameraSwitchButton *switchCameraButton;
 @property (strong, nonatomic) QRToggleTorchButton *toggleTorchButton;
 @property (strong, nonatomic) QRCodeReaderView     *cameraView;
@@ -43,7 +43,7 @@
 
 @end
 
-@implementation QRCodeReaderViewController
+@implementation AlphaQRCodeReaderViewController
 
 - (void)dealloc
 {

@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -25,9 +25,9 @@
  */
 
 #import <UIKit/UIKit.h>
-#import "QRCodeReaderDelegate.h"
+#import "AlphaQRCodeReaderDelegate.h"
 
-@interface ViewController : UIViewController <QRCodeReaderDelegate>
+@interface ViewController : UIViewController <AlphaQRCodeReaderDelegate>
 
 - (IBAction)scanAction:(id)sender;
 

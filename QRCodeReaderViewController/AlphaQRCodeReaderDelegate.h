@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -26,15 +26,15 @@
 
 #import <Foundation/Foundation.h>
 
-@class QRCodeReaderViewController;
+@class AlphaQRCodeReaderViewController;
 
 /**
  * This protocol defines delegate methods for objects that implements the
- * `QRCodeReaderDelegate`. The methods of the protocol allow the delegate to be
+ * `AlphaQRCodeReaderDelegate`. The methods of the protocol allow the delegate to be
  * notified when the reader did scan result and or when the user wants to stop
  * to read some QRCodes.
  */
-@protocol QRCodeReaderDelegate <NSObject>
+@protocol AlphaQRCodeReaderDelegate <NSObject>
 
 @optional
 
@@ -47,13 +47,13 @@
  * @param result The content of the QRCode as a string.
  * @since 1.0.0
  */
-- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result;
+- (void)reader:(AlphaQRCodeReaderViewController *)reader didScanResult:(NSString *)result;
 
 /**
  * @abstract Tells the delegate that the user wants to stop scanning QRCodes.
  * @param reader The reader view controller that the user wants to stop.
  * @since 1.0.0
  */
-- (void)readerDidCancel:(QRCodeReaderViewController *)reader;
+- (void)readerDidCancel:(AlphaQRCodeReaderViewController *)reader;
 
 @end

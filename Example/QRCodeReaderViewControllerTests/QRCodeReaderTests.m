@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -25,7 +25,7 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "QRCodeReaderViewController.h"
+#import "AlphaQRCodeReaderViewController.h"
 
 @interface QRCodeReaderTests : XCTestCase
 

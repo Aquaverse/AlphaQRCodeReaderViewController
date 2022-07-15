@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -25,7 +25,7 @@
  */
 
 #import "ViewController.h"
-#import "QRCodeReaderViewController.h"
+#import "AlphaQRCodeReaderViewController.h"
 #import "QRCodeReader.h"
 
 @interface ViewController ()
@@ -37,12 +37,12 @@
 - (IBAction)scanAction:(id)sender
 {
   if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
-    static QRCodeReaderViewController *vc = nil;
+    static AlphaQRCodeReaderViewController *vc = nil;
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
       QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
-      vc                   = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
+      vc                   = [AlphaQRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
       vc.modalPresentationStyle = UIModalPresentationFormSheet;
     });
     vc.delegate = self;
@@ -62,7 +62,7 @@
 
 #pragma mark - QRCodeReader Delegate Methods
 
-- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
+- (void)reader:(AlphaQRCodeReaderViewController *)reader didScanResult:(NSString *)result
 {
   [reader stopScanning];
 
@@ -72,7 +72,7 @@
   }];
 }
 
-- (void)readerDidCancel:(QRCodeReaderViewController *)reader
+- (void)readerDidCancel:(AlphaQRCodeReaderViewController *)reader
 {
   [self dismissViewControllerAnimated:YES completion:NULL];
 }
