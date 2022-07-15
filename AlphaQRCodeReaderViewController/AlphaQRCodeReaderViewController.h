@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -33,7 +33,7 @@
  * the QRCodes. It is based on the `AVFoundation` framework from Apple. It aims
  * to replace ZXing or ZBar for iOS 7 and over.
  */
-@interface QRCodeReaderViewController : UIViewController
+@interface AlphaQRCodeReaderViewController : UIViewController
 
 #pragma mark - Creating and Inializing QRCodeReader Controllers
 /** @name Creating and Inializing QRCode Reader Controllers */

@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -25,7 +25,7 @@
  */
 
 #import "ViewController.h"
-#import "QRCodeReaderViewController.h"
+#import "AlphaQRCodeReaderViewController.h"
 #import "QRCodeReader.h"
 
 @interface ViewController ()
@@ -37,14 +37,14 @@
 - (IBAction)scanAction:(id)sender
 {
   if ([QRCodeReader supportsMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]]) {
-    static QRCodeReaderViewController *vc = nil;
+    static AlphaQRCodeReaderViewController *vc = nil;
     static dispatch_once_t onceToken;
 
     dispatch_once(&onceToken, ^{
       QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
       
       UIColor *bordersColor = [[UIColor alloc] initWithRed:216.0f/255.0f green:216.0f/255.0f blue:216.0f/255.0f alpha:1.0];
-        vc = [[QRCodeReaderViewController alloc] initWithCancelButtonTitle:nil codeReader:reader startScanningAtLoad:true showSwitchCameraButton:false showTorchButton:true showMyQRCodeButton: NO chooseFromPhotoLibraryButtonTitle:@"Browse" bordersColor:bordersColor messageText: @"Point your camera on QR code" torchTitle:@"Light" torchImage:nil chooseFromPhotoLibraryButtonImage:nil myQRCodeText:@"My QRCode" myQRCodeImage:nil];
+        vc = [[AlphaQRCodeReaderViewController alloc] initWithCancelButtonTitle:nil codeReader:reader startScanningAtLoad:true showSwitchCameraButton:false showTorchButton:true showMyQRCodeButton: NO chooseFromPhotoLibraryButtonTitle:@"Browse" bordersColor:bordersColor messageText: @"Point your camera on QR code" torchTitle:@"Light" torchImage:nil chooseFromPhotoLibraryButtonImage:nil myQRCodeText:@"My QRCode" myQRCodeImage:nil];
       vc.modalPresentationStyle = UIModalPresentationFormSheet;
     });
     vc.delegate = self;
@@ -64,7 +64,7 @@
 
 #pragma mark - QRCodeReader Delegate Methods
 
-- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
+- (void)reader:(AlphaQRCodeReaderViewController *)reader didScanResult:(NSString *)result
 {
   [reader stopScanning];
 
@@ -74,7 +74,7 @@
   }];
 }
 
-- (void)readerDidCancel:(QRCodeReaderViewController *)reader
+- (void)readerDidCancel:(AlphaQRCodeReaderViewController *)reader
 {
   [self dismissViewControllerAnimated:YES completion:NULL];
 }

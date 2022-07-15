@@ -1,9 +1,9 @@
-![QRCodeReaderViewController](https://github.com/YannickL/QRCodeReaderViewController/blob/master/web/qrcodereaderviewcontroller_header.png)
+![AlphaQRCodeReaderViewController](https://github.com/YannickL/AlphaQRCodeReaderViewController/blob/master/web/qrcodereaderviewcontroller_header.png)
 
 <p align="center">
-  <a href="http://cocoadocs.org/docsets/QRCodeReaderViewController/"><img alt="Supported Platforms" src="https://cocoapod-badges.herokuapp.com/p/QRCodeReaderViewController/badge.svg"/></a>
-  <a href="http://cocoadocs.org/docsets/QRCodeReaderViewController/"><img alt="Version" src="https://cocoapod-badges.herokuapp.com/v/QRCodeReaderViewController/badge.svg"/></a>
-  <a href="https://travis-ci.org/yannickl/QRCodeReaderViewController"><img alt="Build status" src="https://travis-ci.org/yannickl/QRCodeReaderViewController.svg?branch=master"/></a>
+  <a href="http://cocoadocs.org/docsets/AlphaQRCodeReaderViewController/"><img alt="Supported Platforms" src="https://cocoapod-badges.herokuapp.com/p/AlphaQRCodeReaderViewController/badge.svg"/></a>
+  <a href="http://cocoadocs.org/docsets/AlphaQRCodeReaderViewController/"><img alt="Version" src="https://cocoapod-badges.herokuapp.com/v/AlphaQRCodeReaderViewController/badge.svg"/></a>
+  <a href="https://travis-ci.org/yannickl/AlphaQRCodeReaderViewController"><img alt="Build status" src="https://travis-ci.org/yannickl/AlphaQRCodeReaderViewController.svg?branch=master"/></a>
 </p>
 
 The _QRCodeReaderViewController_ was initially a simple QRCode reader but it now lets you the possibility to specify the [format type](https://developer.apple.com/library/ios/documentation/AVFoundation/Reference/AVMetadataMachineReadableCodeObject_Class/index.html#//apple_ref/doc/constant_group/Machine_Readable_Object_Types) you want to decode. It is based on the `AVFoundation` framework from Apple in order to replace ZXing or ZBar for iOS 7 and over.
@@ -24,14 +24,14 @@ Note that in iOS10+, you will need first to reasoning about the camera use. For 
    <img alt="privacy - camera usage description" src="https://cloud.githubusercontent.com/assets/798235/19264760/5fe6d4ac-8fa2-11e6-8760-63734789fcc8.png">
  </p>
 
-Now a very simple example how to work with `QRCodeReaderViewController`:
+Now a very simple example how to work with `AlphaQRCodeReaderViewController`:
 
 ```objective-c
 // Create the reader object
 QRCodeReader *reader = [QRCodeReader readerWithMetadataObjectTypes:@[AVMetadataObjectTypeQRCode]];
 
 // Instantiate the view controller
-QRCodeReaderViewController *vc = [QRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:_reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
+AlphaQRCodeReaderViewController *vc = [AlphaQRCodeReaderViewController readerWithCancelButtonTitle:@"Cancel" codeReader:_reader startScanningAtLoad:YES showSwitchCameraButton:YES showTorchButton:YES];
 
 // Set the presentation style
 _vc.modalPresentationStyle = UIModalPresentationFormSheet;
@@ -45,7 +45,7 @@ _vc.delegate = self;
 }];
 ```
 
-Now when we touch the scan button we need to display the QRCodeReaderViewController:
+Now when we touch the scan button we need to display the AlphaQRCodeReaderViewController:
 
 ```objective-c
 #pragma mark - Action Methods
@@ -61,14 +61,14 @@ And here the delegate methods:
 ```objective-c
 #pragma mark - QRCodeReader Delegate Methods
 
-- (void)reader:(QRCodeReaderViewController *)reader didScanResult:(NSString *)result
+- (void)reader:(AlphaQRCodeReaderViewController *)reader didScanResult:(NSString *)result
 {
   [self dismissViewControllerAnimated:YES completion:^{
     NSLog(@"%@", result);
   }];
 }
 
-- (void)readerDidCancel:(QRCodeReaderViewController *)reader
+- (void)readerDidCancel:(AlphaQRCodeReaderViewController *)reader
 {
   [self dismissViewControllerAnimated:YES completion:NULL];
 }
@@ -96,7 +96,7 @@ $ touch Podfile
 $ edit Podfile
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '7.0'
-pod 'QRCodeReaderViewController', '~> 4.0.2'
+pod 'AlphaQRCodeReaderViewController', '~> 4.0.2'
 ```
 
 Install into your project:
@@ -113,7 +113,7 @@ $ open MyProject.xcworkspace
 
 #### Manually
 
-[Download](https://github.com/YannickL/QRCodeReaderViewController/archive/master.zip) the project and copy the `QRCodeReaderViewController` folder into your project and then simply `#import "QRCodeReaderViewController.h"` in the file(s) you would like to use it in.
+[Download](https://github.com/YannickL/AlphaQRCodeReaderViewController/archive/master.zip) the project and copy the `AlphaQRCodeReaderViewController` folder into your project and then simply `#import "AlphaQRCodeReaderViewController.h"` in the file(s) you would like to use it in.
 
 ## Contribution
 

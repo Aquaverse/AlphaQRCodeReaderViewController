@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -24,7 +24,7 @@
  *
  */
 
-#import "QRCodeReaderViewController.h"
+#import "AlphaQRCodeReaderViewController.h"
 #import "QRCameraSwitchButton.h"
 #import "QRCodeReaderView.h"
 #import "QRToggleTorchButton.h"
@@ -32,7 +32,7 @@
 #import "CameraOverlayRectView.h"
 #import "VerticalButton.h"
 
-@interface QRCodeReaderViewController ()
+@interface AlphaQRCodeReaderViewController ()
 @property (strong, nonatomic) UILabel              *titleLabel;
 @property (strong, nonatomic) VerticalButton       *switchCameraButton;
 @property (strong, nonatomic) VerticalButton       *toggleTorchButton;
@@ -62,7 +62,7 @@
 
 @end
 
-@implementation QRCodeReaderViewController
+@implementation AlphaQRCodeReaderViewController
 
 - (void)dealloc
 {
@@ -445,7 +445,7 @@
 
 @end
 
-@implementation QRCodeReaderViewController(UIImagePickerControllerDelegate)
+@implementation AlphaQRCodeReaderViewController(UIImagePickerControllerDelegate)
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<UIImagePickerControllerInfoKey, id> *)info {
   UIImage *image = info[UIImagePickerControllerOriginalImage];

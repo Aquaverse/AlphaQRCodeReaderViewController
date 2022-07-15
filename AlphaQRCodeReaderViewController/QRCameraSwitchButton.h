@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com

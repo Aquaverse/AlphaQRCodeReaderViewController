@@ -1,5 +1,5 @@
 /*
- * QRCodeReaderViewController
+ * AlphaQRCodeReaderViewController
  *
  * Copyright 2014-present Yannick Loriot.
  * http://yannickloriot.com
@@ -24,13 +24,39 @@
  *
  */
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+@class AlphaQRCodeReaderViewController;
 
 /**
- * Overlay over the camera view to display the area (a square) where to scan the
- * code.
- * @since 2.0.0
+ * This protocol defines delegate methods for objects that implements the
+ * `QRCodeReaderDelegate`. The methods of the protocol allow the delegate to be
+ * notified when the reader did scan result and or when the user wants to stop
+ * to read some QRCodes.
  */
-@interface QRCodeReaderView : UIView
-+ (CGRect) readerRectFromRect:(CGRect)rect;
+@protocol QRCodeReaderDelegate <NSObject>
+
+@optional
+
+#pragma mark - Listening for Reader Status
+/** @name Listening for Reader Status */
+
+/**
+ * @abstract Tells the delegate that the reader did scan a QRCode.
+ * @param reader The reader view controller that scanned a QRCode.
+ * @param result The content of the QRCode as a string.
+ * @since 1.0.0
+ */
+- (void)reader:(AlphaQRCodeReaderViewController *)reader didScanResult:(NSString *)result;
+
+/**
+ * @abstract Tells the delegate that the user wants to stop scanning QRCodes.
+ * @param reader The reader view controller that the user wants to stop.
+ * @since 1.0.0
+ */
+- (void)readerDidCancel:(AlphaQRCodeReaderViewController *)reader;
+
+
+- (void)reader:(AlphaQRCodeReaderViewController *)reader myQRCodeSelected:(UIButton *)sender;
+
 @end
